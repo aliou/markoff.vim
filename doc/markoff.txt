@@ -1,0 +1,10 @@
+*markoff.txt* Open your files in Markoff.
+
+Author:  Aliou Diallo <https://aliou.me>
+License: Same terms as Vim itself (see |license|)
+
+INTRODUCTION                          *markoff*
+
+COMMANDS                              *markoff-commands*
+
+ABOUT                                 *markoff-about*
