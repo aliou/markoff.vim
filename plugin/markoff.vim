@@ -12,7 +12,22 @@ if !exists('g:markoff_application_path')
   let g:markoff_application_path = "/Applications/Markoff.app"
 endif
 
+function! s:check_application()
+  if !isdirectory(g:markoff_application_path) || empty(g:markoff_application_path)
+    echohl Error
+    echomsg "markoff.vim: Application path is wrong or empty. Is Markoff installed?"
+    echohl None
+
+    return -1
+  endif
+endfunction
+
 function! s:Markoff(...)
+  let err = s:check_application()
+  if err != 0
+    return
+  endif
+
   if a:0 < 1
     let file = "%"
   else
