@@ -8,3 +8,5 @@ INTRODUCTION                          *markoff*
 COMMANDS                              *markoff-commands*
 
 ABOUT                                 *markoff-about*
+
+ vim:tw=78:et:ft=help:norl:
