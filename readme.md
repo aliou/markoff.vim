@@ -1,11 +1,19 @@
 # Markoff.vim
 Open documents in [Markoff](https://robots.thoughtbot.com/markoff-free-markdown-previewer) from Vim.
 
-#### Usage
+## Usage
 
 Either call `:Markoff` to open the current file, or pass an argument to open another file.
 
-#### Installation
+## Options
+
+You can set the path to the Markoff application:
+
+```vim
+let g:markoff_application_path = "/Users/usename/Applications/Markoff.app"
+```
+
+## Installation
 
 Using [Pathogen](https://github.com/tpope/vim-pathogen):
  ```bash
@@ -27,5 +35,5 @@ Using [Vundle](https://github.com/gmarik/vundle):
 Plugin 'aliou/markoff.vim'
 ```
 
-#### License
+## License
 Copyright (c) Aliou Diallo. Distributed under the same terms as Vim itself. See `:help license.`
