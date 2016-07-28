@@ -1,5 +1,5 @@
 # Markoff.vim
-Open documents in [Markoff](https://robots.thoughtbot.com/markoff-free-markdown-previewer) from Vim.
+Preview documents in [Markoff](https://robots.thoughtbot.com/markoff-free-markdown-previewer) from Vim.
 
 ## Usage
 
