@@ -15,6 +15,13 @@ let g:markoff_application_path = "/Users/usename/Applications/Markoff.app"
 
 ## Installation
 
+Using Vim 8's packages:
+```bash
+git clone https://github.com/aliou/markoff.vim.git ~/.vim/pack/aliou/start/markoff.vim
+# OR
+git clone https://github.com/aliou/markoff.vim.git ~/.vim/pack/aliou/opt/markoff.vim
+```
+
 Using [Pathogen](https://github.com/tpope/vim-pathogen):
  ```bash
 git clone https://github.com/aliou/markoff.vim.git ~/.vim/bundle/markoff.vim
@@ -36,4 +43,4 @@ Plugin 'aliou/markoff.vim'
 ```
 
 ## License
-Copyright (c) Aliou Diallo. Distributed under the same terms as Vim itself. See `:help license.`
+Copyright (c) Aliou Diallo. Distributed under the same terms as Vim itself. See `:help license`.
