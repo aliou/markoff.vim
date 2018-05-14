@@ -27,11 +27,11 @@ function! s:run(filepath)
   endif
 endfunction
 
-function! s:open(...)
+function! Markoff(...)
   let l:err = s:check_application()
   let l:file = get(a:000, 1, expand('%'))
 
   call s:run(l:file)
 endfunction
 
-command! -nargs=? -complete=file Markoff call s:open(<f-args>)
+command! -nargs=? -complete=file Markoff call Markoff(<f-args>)
