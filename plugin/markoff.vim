@@ -1,6 +1,6 @@
 " markoff.vim - Open your files in Markoff.
 " Maintainer:   Aliou Diallo <https://aliou.me>
-" Version:      1.0
+" Version:      1.1.0
 "
 if exists('g:loaded_markoff') || &compatible
   finish
