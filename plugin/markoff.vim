@@ -2,39 +2,36 @@
 " Maintainer:   Aliou Diallo <https://aliou.me>
 " Version:      1.0
 "
-if exists('g:loaded_markoff') || &cp
+if exists('g:loaded_markoff') || &compatible
   finish
 endif
 let g:loaded_markoff = 1
 
 " Set the application path if it is not custom.
 if !exists('g:markoff_application_path')
-  let g:markoff_application_path = "/Applications/Markoff.app"
+  let g:markoff_application_path = '/Applications/Markoff.app'
 endif
 
 function! s:check_application()
   if !isdirectory(g:markoff_application_path) || empty(g:markoff_application_path)
-    echohl Error
-    echomsg "markoff.vim: Application path is wrong or empty. Is Markoff installed?"
-    echohl None
-
-    return -1
+    throw 'markoff.vim: Application path is wrong or empty. Is Markoff installed?'
   endif
 endfunction
 
-function! s:Markoff(...)
-  let err = s:check_application()
-  if err != 0
-    return
-  endif
-
-  if a:0 < 1
-    let file = "%"
+function! s:run(filepath)
+  let l:command = 'open -a ' . g:markoff_application_path . ' ' . a:filepath
+  if has('job')
+    call system(l:command)
   else
-    let file = a:1
+    call job_start(['/bin/sh', '-c', l:command])
   endif
-
-  execute "!open -a " g:markoff_application_path . " " . file
 endfunction
 
-command! -nargs=? -complete=file Markoff call s:Markoff(<f-args>)
+function! s:open(...)
+  let l:err = s:check_application()
+  let l:file = get(a:000, 1, expand('%'))
+
+  call s:run(l:file)
+endfunction
+
+command! -nargs=? -complete=file Markoff call s:open(<f-args>)
